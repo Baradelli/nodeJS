@@ -3,12 +3,12 @@ import { AppError } from "@shared/errors/Apperror";
 import { CreateCarUseCase } from "./CreateCarUseCase";
 
 let createCarUseCase: CreateCarUseCase;
-let carsRepository: CarsRepositoryInMemory;
+let carsRepositoryInMemory: CarsRepositoryInMemory;
 
 describe("Create Car", () => {
   beforeEach(() => {
-    carsRepository = new CarsRepositoryInMemory();
-    createCarUseCase = new CreateCarUseCase(carsRepository);
+    carsRepositoryInMemory = new CarsRepositoryInMemory();
+    createCarUseCase = new CreateCarUseCase(carsRepositoryInMemory);
   });
 
   it("should be able to create a new car", async () => {
